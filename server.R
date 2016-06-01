@@ -34,6 +34,14 @@ tabla<-function(){
   
 }
 
+g3<-function(){
+  
+  read.table(textConnection(getURL(
+    "https://s3-us-west-2.amazonaws.com/datos-simulados-para-apps/simulados_g3.csv"
+  )), sep=",", header=TRUE)
+  
+}
+
 modelo_geometric_canonic<-function(){
   
   for(i in 1:n){
@@ -555,7 +563,7 @@ plotear_10<-function(){
 shinyServer(function(input, output,session) {
 
   tabla<-tabla()
-  #g3<-g3()
+  g3<-g3()
   #Abonos<-Abonos()
   #g0_3_2<-g0_3_2()
   #dt_op<-dt_op()
